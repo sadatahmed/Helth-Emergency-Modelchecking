@@ -1,6 +1,7 @@
 USER = (visit_website -> req_login -> enter_loginfo -> req_registration -> enter_reg_info -> req_upd_info -> USER).
 
-INTERFACE = (login_page -> verify_info -> login_succ -> login_fail -> verify_reg_info -> reg_succ -> reg_fail -> verify_upd_info -> info_updated -> INTERFACE).
+INTERFACE = (login_page -> verify_info -> login_succ -> login_fail -> verify_reg_info -> reg_succ -> reg_fail 
+	    -> verify_upd_info -> info_updated -> INTERFACE).
 
 DATABASE = (valid_info -> invalid_info -> valid_reg_info -> invalid_reg_info -> valid_upd_info -> DATABASE).
 
