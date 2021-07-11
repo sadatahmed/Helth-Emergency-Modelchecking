@@ -13,4 +13,4 @@ DATABASE = (valid_info -> invalid_info -> valid_reg_info -> invalid_reg_info -> 
 		enter_loginfo/verify_info,
 		enter_reg_info/verify_reg_info,
 		req_upd_info/verify_upd_info, 
-		login_page/req_login}.
+		login_page/req_login}. 
