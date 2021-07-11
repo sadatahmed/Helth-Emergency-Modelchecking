@@ -1,0 +1,9 @@
+USER =(send_borrow_req -> send_product_info -> (checkout_product -> return_home -> USER | stockout_product -> try_other_product -> USER)).
+
+SERVER = (receive_borrow_req -> receive_product_info -> send_req_to_search -> receive_result_info -> check_availability -> receive_available_info -> (available -> return_home -> SERVER | not_available -> try_other_product -> SERVER)).
+
+DATABASE = (receive_req_to_search -> processing_req -> send_result_info -> check_availability -> send_available_info -> DATABASE).
+
+
+||BORROW_REQ = (USER || SERVER || DATABASE)
+/{send_borrow_req/receive_borrow_req, send_product_info/receive_product_info, checkout_product/available, stockout_product/not_available, send_req_to_search/receive_req_to_search, receive_search_info/send_search_info, send_req_to_search/receive_req_to_search, receive_result_info/send_result_info, receive_available_info/send_available_info}.

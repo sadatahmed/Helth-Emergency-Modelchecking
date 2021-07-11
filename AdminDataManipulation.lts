@@ -1,0 +1,10 @@
+ADMIN =(visit_web -> verify_admin -> receive_login_succ -> redirect_adminpage -> receive_pending_list -> perform_act -> (approve_pending_pro -> product_live -> ADMIN | reject_pending_pro -> reject_succ -> ADMIN)).
+
+SERVER = (visit_web -> verify_admin -> authenticate -> send_login_succ -> redirect_adminpage -> send_pending_list -> perform_act -> send_act_req -> receive_result -> (allow_access -> product_live -> SERVER | product_info_remove_req -> delete_pro_description -> SERVER)).
+
+DATABASE = (receive_act_req -> processing_req -> send_result -> DATABASE).
+
+||ADMIN_SER = (ADMIN || SERVER || DATABASE)
+/{loggedin/send_login_succ, loggedin/receive_login_succ, pending_list/send_pending_list,pending_list/receive_pending_list,
+approve/approve_pending_pro, approve/allow_access, reject_pending_pro/product_info_remove_req,
+reject_succ/delete_pro_description, action/send_act_req, action/receive_act_req, receive_result/send_result}.
